@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drivanta Agro Foods | Farm Fresh Dehydrated Vegetables & Fruits – Nandurbar, Maharashtra</title>
+  <meta name="description" content="Drivanta Agro Foods – 100% natural dehydrated vegetables and fruits sourced directly from farms in Nandurbar, Maharashtra. No preservatives. No additives. Bulk & retail supply across India." />
+  <meta property="og:title" content="Drivanta Agro Foods | Farm Fresh. Sun Dried. Delivered Pure." />
+  <meta property="og:description" content="Premium dehydrated vegetables and fruits, direct from farms in Nandurbar, Maharashtra. FSSAI Certified. Pan India Delivery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=80" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2D6A4F',
+            'primary-dark': '#1B4332',
+            'primary-light': '#40916C',
+            accent: '#F4A261',
+            'accent-dark': '#E76F51',
+            'bg-warm': '#F9F6F0',
+            'dark-text': '#1B1B1B',
+            'muted': '#6B7280',
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #F9F6F0; color: #1B1B1B; }
+    h1, h2, h3, .font-playfair { font-family: 'Playfair Display', serif; }
+
+    /* Fade-in animation */
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Navbar */
+    #navbar { transition: background 0.3s, box-shadow 0.3s; }
+    #navbar.scrolled { background: #fff !important; box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
+    #navbar.scrolled .nav-link { color: #1B1B1B !important; }
+    #navbar.scrolled .nav-logo { color: #2D6A4F !important; }
+    #navbar.scrolled .nav-cta { background: #2D6A4F !important; color: #fff !important; }
+
+    /* Hero */
+    .hero-bg {
+      background-image: linear-gradient(to bottom right, rgba(27,67,50,0.82), rgba(45,106,79,0.65)),
+        url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+      width: 60px; height: 60px;
+      background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      cursor: pointer; text-decoration: none;
+      animation: pulse-wa 2.5s infinite;
+    }
+    @keyframes pulse-wa {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.55); }
+      70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    /* Count-up stat */
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 800; }
+
+    /* Product card */
+    .product-card { transition: transform 0.3s, box-shadow 0.3s; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(45,106,79,0.15); }
+
+    /* Filter tabs */
+    .filter-tab { cursor: pointer; transition: all 0.25s; }
+    .filter-tab.active { background: #2D6A4F; color: #fff; }
+
+    /* Gallery */
+    .gallery-img { cursor: pointer; transition: transform 0.3s, opacity 0.3s; overflow: hidden; border-radius: 1rem; }
+    .gallery-img img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.4s; display: block; border-radius: 1rem; }
+    .gallery-img:hover img { transform: scale(1.07); }
+
+    /* Lightbox */
+    #lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:10000; align-items:center; justify-content:center; }
+    #lightbox.open { display:flex; }
+    #lightbox img { max-width:90vw; max-height:85vh; border-radius:1rem; box-shadow:0 8px 40px rgba(0,0,0,0.5); }
+
+    /* Timeline */
+    .timeline-step { position: relative; }
+    .timeline-step:not(:last-child)::after {
+      content: ''; position: absolute; top: 24px; left: 50%;
+      width: 100%; height: 2px; background: #40916C; z-index: 0;
+    }
+
+    /* Testimonial */
+    .testimonial-card { background: #fff; border-radius: 1.25rem; box-shadow: 0 4px 24px rgba(45,106,79,0.09); }
+
+    /* Section title underline */
+    .section-title-line::after {
+      content: ''; display: block; width: 64px; height: 4px;
+      background: #F4A261; border-radius: 2px; margin: 12px auto 0;
+    }
+    .section-title-line.left-line::after { margin: 12px 0 0; }
+
+    /* Certification badge */
+    .cert-badge { background: #fff; border: 2px solid #d1fae5; border-radius: 1.25rem; box-shadow: 0 2px 16px rgba(45,106,79,0.08); }
+
+    /* Mobile menu */
+    #mobile-menu { transition: max-height 0.35s ease, opacity 0.35s; max-height: 0; overflow: hidden; opacity: 0; }
+    #mobile-menu.open { max-height: 500px; opacity: 1; }
+
+    /* About image */
+    .about-img { border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(45,106,79,0.18); }
+
+    /* Scroll indicator */
+    @keyframes bounce-down { 0%,100%{transform:translateY(0)}50%{transform:translateY(8px)} }
+    .bounce { animation: bounce-down 1.5s infinite; }
+
+    /* Form */
+    .form-input {
+      width: 100%; padding: 0.65rem 1rem; border: 1.5px solid #d1d5db;
+      border-radius: 0.75rem; font-family: 'Inter', sans-serif; font-size: 0.97rem;
+      background: #fff; transition: border 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .form-input:focus { border-color: #2D6A4F; box-shadow: 0 0 0 3px rgba(45,106,79,0.12); }
+
+    /* Why-us card */
+    .why-card { background: #fff; border-radius: 1.25rem; box-shadow: 0 3px 18px rgba(45,106,79,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+    .why-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(45,106,79,0.16); }
+  </style>
+</head>
+<body class="bg-bg-warm">
+
+<!-- =========================================================
+     FLOATING WHATSAPP BUTTON
+     ========================================================= -->
+<a href="https://wa.me/917709092656?text=Hello%2C%20I%20am%20interested%20in%20Drivanta%20Agro%20Foods%20products.%20Please%20share%20more%20details." 
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp text-white text-3xl"></i>
+</a>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" onclick="closeLightbox(event)">
+  <img id="lightbox-img" src="" alt="Gallery image" />
+</div>
+
+<!-- =========================================================
+     NAVBAR
+     ========================================================= -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent px-4 py-3">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#home" class="flex items-center gap-2 nav-logo text-white">
+      <span class="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+        <i class="fas fa-leaf text-white text-base"></i>
+      </span>
+      <span class="font-playfair font-bold text-xl tracking-tight">Drivanta Agro Foods</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center gap-7">
+      <a href="#home" class="nav-link text-white/90 hover:text-accent font-medium text-sm transition">Home</a>
+      <a href="#about" class="nav-link text-white/90 hover:text-accent font-medium text-sm transition">About</a>
+      <a href="#products" class="nav-link text-white/90 hover:text-accent font-medium text-sm transition">Products</a>
+      <a href="#why-us" class="nav-link text-white/90 hover:text-accent font-medium text-sm transition">Why Us</a>
+      <a href="#certifications" class="nav-link text-white/90 hover:text-accent font-medium text-sm transition">Certifications</a>
+      <a href="#contact" class="nav-link text-white/90 hover:text-accent font-medium text-sm transition">Contact</a>
+      <a href="#contact" class="nav-cta bg-accent text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-accent-dark transition shadow-md">Get a Quote</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="lg:hidden text-white focus:outline-none" aria-label="Toggle menu">
+      <i class="fas fa-bars text-2xl" id="ham-icon"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden bg-white rounded-2xl mt-2 mx-0 shadow-xl overflow-hidden">
+    <div class="flex flex-col p-4 gap-1">
+      <a href="#home" class="mobile-nav-link py-2 px-4 rounded-xl text-dark-text hover:bg-green-50 font-medium" onclick="closeMobileMenu()">Home</a>
+      <a href="#about" class="mobile-nav-link py-2 px-4 rounded-xl text-dark-text hover:bg-green-50 font-medium" onclick="closeMobileMenu()">About</a>
+      <a href="#products" class="mobile-nav-link py-2 px-4 rounded-xl text-dark-text hover:bg-green-50 font-medium" onclick="closeMobileMenu()">Products</a>
+      <a href="#why-us" class="mobile-nav-link py-2 px-4 rounded-xl text-dark-text hover:bg-green-50 font-medium" onclick="closeMobileMenu()">Why Us</a>
+      <a href="#certifications" class="mobile-nav-link py-2 px-4 rounded-xl text-dark-text hover:bg-green-50 font-medium" onclick="closeMobileMenu()">Certifications</a>
+      <a href="#contact" class="mobile-nav-link py-2 px-4 rounded-xl text-dark-text hover:bg-green-50 font-medium" onclick="closeMobileMenu()">Contact</a>
+      <a href="#contact" class="mt-2 bg-primary text-white py-2.5 px-4 rounded-xl font-semibold text-center" onclick="closeMobileMenu()">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- =========================================================
+     HERO SECTION
+     ========================================================= -->
+<section id="home" class="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-4 pt-16">
+  <div class="max-w-4xl mx-auto fade-in">
+    <!-- Trust badges top -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <span class="bg-white/10 backdrop-blur border border-white/20 text-white text-xs px-4 py-1.5 rounded-full font-medium"><i class="fas fa-certificate text-accent mr-1"></i> FSSAI Certified</span>
+      <span class="bg-white/10 backdrop-blur border border-white/20 text-white text-xs px-4 py-1.5 rounded-full font-medium"><i class="fas fa-leaf text-green-300 mr-1"></i> No Preservatives</span>
+      <span class="bg-white/10 backdrop-blur border border-white/20 text-white text-xs px-4 py-1.5 rounded-full font-medium"><i class="fas fa-tractor text-accent mr-1"></i> Direct from Farm</span>
+      <span class="bg-white/10 backdrop-blur border border-white/20 text-white text-xs px-4 py-1.5 rounded-full font-medium"><i class="fas fa-truck text-blue-200 mr-1"></i> Pan India Delivery</span>
+    </div>
+
+    <h1 class="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
+      From Our Farms to<br/>Your Kitchen —<br/>
+      <span class="text-accent">Naturally Preserved</span>
+    </h1>
+    <p class="text-white/85 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+      100% Natural Dehydrated Vegetables &amp; Fruits &nbsp;|&nbsp; No Preservatives &nbsp;|&nbsp; Bulk &amp; Retail Supply from Nandurbar, Maharashtra
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#products" class="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-3.5 rounded-full text-base transition shadow-lg hover:shadow-xl">
+        <i class="fas fa-leaf mr-2"></i>View Products
+      </a>
+      <a href="https://wa.me/917709092656?text=Hello%20Drivanta%20Agro%20Foods%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener"
+         class="bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-8 py-3.5 rounded-full text-base transition shadow-lg hover:shadow-xl">
+        <i class="fab fa-whatsapp mr-2"></i>WhatsApp Us Now
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="mt-16 bounce text-white/50">
+      <i class="fas fa-chevron-down text-2xl"></i>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     STATS BAR
+     ========================================================= -->
+<section id="stats" class="bg-primary py-14 px-4">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="fade-in">
+      <div class="stat-num text-white" data-target="500" data-suffix="+">0</div>
+      <p class="text-green-200 font-medium mt-1 text-sm">Happy Customers</p>
+    </div>
+    <div class="fade-in">
+      <div class="stat-num text-white" data-target="20" data-suffix="+">0</div>
+      <p class="text-green-200 font-medium mt-1 text-sm">Premium Products</p>
+    </div>
+    <div class="fade-in">
+      <div class="stat-num text-accent" data-target="100" data-suffix="%">0</div>
+      <p class="text-green-200 font-medium mt-1 text-sm">Natural Ingredients</p>
+    </div>
+    <div class="fade-in">
+      <div class="stat-num text-white" data-target="5" data-suffix="+">0</div>
+      <p class="text-green-200 font-medium mt-1 text-sm">Years Experience</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ABOUT US
+     ========================================================= -->
+<section id="about" class="py-20 px-4 bg-bg-warm">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <!-- Text -->
+    <div class="fade-in">
+      <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2"><i class="fas fa-map-marker-alt mr-1"></i> Nandurbar, Maharashtra</p>
+      <h2 class="font-playfair text-4xl md:text-5xl font-bold text-dark-text mb-5 section-title-line left-line">Rooted in the Soils<br/>of Nandurbar</h2>
+      <p class="text-muted leading-relaxed mb-4 text-base">
+        Drivanta Agro Foods is a family-driven enterprise based in the rich agricultural belt of Nandurbar, Maharashtra. We specialize in producing premium dehydrated vegetables and fruits — sourced directly from local farms and processed using modern dehydration techniques that preserve nutrition, flavor, and color without any chemicals or preservatives.
+      </p>
+      <p class="text-muted leading-relaxed mb-8 text-base">
+        Our mission is to bring farm-fresh purity directly to households, restaurants, food manufacturers, and exporters across India — with the guarantee of zero compromises on quality.
+      </p>
+
+      <!-- Founder Quote -->
+      <div class="bg-primary/5 border-l-4 border-primary rounded-xl p-5 relative">
+        <i class="fas fa-quote-left text-primary/30 text-4xl absolute -top-3 -left-2"></i>
+        <p class="text-dark-text text-base italic font-medium pl-4">"We grow it, we dry it, we deliver it — pure and simple."</p>
+        <p class="text-primary font-semibold text-sm mt-2 pl-4">— Mohit Patil, Founder, Drivanta Agro Foods</p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <div class="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+          <i class="fas fa-check-circle text-primary"></i>
+          <span class="text-sm font-medium text-primary">FSSAI Licensed</span>
+        </div>
+        <div class="flex items-center gap-2 bg-orange-50 px-4 py-2 rounded-full">
+          <i class="fas fa-shield-alt text-accent-dark"></i>
+          <span class="text-sm font-medium text-accent-dark">No Artificial Additives</span>
+        </div>
+        <div class="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full">
+          <i class="fas fa-truck text-blue-600"></i>
+          <span class="text-sm font-medium text-blue-600">Pan India Shipping</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="fade-in">
+      <img src="https://images.unsplash.com/photo-1595351475754-8a9c6b8d4e05?w=700&q=80" 
+           alt="Drivanta Agro Foods farm and dehydration facility, Nandurbar Maharashtra"
+           class="about-img w-full h-96 object-cover" loading="lazy" />
+      <div class="mt-4 grid grid-cols-2 gap-4">
+        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=75" 
+             alt="Dehydrated vegetables packaging" class="rounded-xl h-32 w-full object-cover shadow" loading="lazy"/>
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=75" 
+             alt="Fresh produce from Indian farm" class="rounded-xl h-32 w-full object-cover shadow" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PRODUCTS SECTION
+     ========================================================= -->
+<section id="products" class="py-20 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-10 fade-in">
+      <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2"><i class="fas fa-box-open mr-1"></i> Our Range</p>
+      <h2 class="font-playfair text-4xl md:text-5xl font-bold text-dark-text mb-3 section-title-line">Our Products</h2>
+      <p class="text-muted mt-4 text-base max-w-xl mx-auto">Naturally dehydrated. Nutritionally preserved. Sourced from the heart of Maharashtra.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10 fade-in">
+      <button class="filter-tab active px-5 py-2 rounded-full border border-primary text-primary font-semibold text-sm" data-filter="all">All</button>
+      <button class="filter-tab px-5 py-2 rounded-full border border-primary text-primary font-semibold text-sm" data-filter="vegetable">🥕 Vegetables</button>
+      <button class="filter-tab px-5 py-2 rounded-full border border-primary text-primary font-semibold text-sm" data-filter="fruit">🥭 Fruits</button>
+      <button class="filter-tab px-5 py-2 rounded-full border border-primary text-primary font-semibold text-sm" data-filter="spice">🌿 Spices &amp; Herbs</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHY CHOOSE US
+     ========================================================= -->
+<section id="why-us" class="py-20 px-4 bg-bg-warm">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 fade-in">
+      <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Our Advantages</p>
+      <h2 class="font-playfair text-4xl md:text-5xl font-bold text-dark-text section-title-line">Why Drivanta Agro Foods?</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="why-card p-7 fade-in">
+        <div class="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center mb-4">
+          <i class="fas fa-seedling text-primary text-2xl"></i>
+        </div>
+        <h3 class="font-playfair text-xl font-bold text-dark-text mb-2">Direct from Farm</h3>
+        <p class="text-muted text-sm leading-relaxed">No middlemen. Freshest produce sourced directly from our partnered farms in Nandurbar at the lowest price.</p>
+      </div>
+      <div class="why-card p-7 fade-in">
+        <div class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mb-4">
+          <i class="fas fa-ban text-red-500 text-2xl"></i>
+        </div>
+        <h3 class="font-playfair text-xl font-bold text-dark-text mb-2">Zero Preservatives</h3>
+        <p class="text-muted text-sm leading-relaxed">100% natural. No chemicals, no additives, no artificial colors. Just pure, sun-dried goodness the traditional way.</p>
+      </div>
+      <div class="why-card p-7 fade-in">
+        <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-4">
+          <i class="fas fa-industry text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="font-playfair text-xl font-bold text-dark-text mb-2">Modern Processing</h3>
+        <p class="text-muted text-sm leading-relaxed">Hygienically processed with food-grade equipment in our state-of-the-art facility, meeting FSSAI standards.</p>
+      </div>
+      <div class="why-card p-7 fade-in">
+        <div class="w-14 h-14 rounded-2xl bg-yellow-50 flex items-center justify-center mb-4">
+          <i class="fas fa-boxes text-accent-dark text-2xl"></i>
+        </div>
+        <h3 class="font-playfair text-xl font-bold text-dark-text mb-2">Flexible Packaging</h3>
+        <p class="text-muted text-sm leading-relaxed">Retail packs (250g) to bulk 25kg bags — customized packaging solutions for B2B, food manufacturers, and exporters.</p>
+      </div>
+      <div class="why-card p-7 fade-in">
+        <div class="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center mb-4">
+          <i class="fas fa-shipping-fast text-indigo-600 text-2xl"></i>
+        </div>
+        <h3 class="font-playfair text-xl font-bold text-dark-text mb-2">Pan India Delivery</h3>
+        <p class="text-muted text-sm leading-relaxed">Fast, reliable shipping across all Indian states. Timely dispatch with proper cold-chain logistics for freshness.</p>
+      </div>
+      <div class="why-card p-7 fade-in">
+        <div class="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center mb-4">
+          <i class="fab fa-whatsapp text-[#25D366] text-2xl"></i>
+        </div>
+        <h3 class="font-playfair text-xl font-bold text-dark-text mb-2">Dedicated Support</h3>
+        <p class="text-muted text-sm leading-relaxed">Responsive team available on WhatsApp &amp; phone. Quick quotes, custom orders, and after-sales assistance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CERTIFICATIONS & QUALITY
+     ========================================================= -->
+<section id="certifications" class="py-20 px-4" style="background: linear-gradient(135deg, #e8f5e9 0%, #f0fdf4 100%);">
+  <div class="max-w-5xl mx-auto text-center">
+    <div class="fade-in">
+      <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2"><i class="fas fa-award mr-1"></i> Quality Assurance</p>
+      <h2 class="font-playfair text-4xl md:text-5xl font-bold text-dark-text mb-3 section-title-line">Certified for Your<br/>Safety &amp; Trust</h2>
+      <p class="text-muted mt-4 mb-10 max-w-lg mx-auto">Every batch of our products is tested, verified, and certified to meet the highest food safety standards in India.</p>
+    </div>
+
+    <!-- Cert badges -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-14">
+      <div class="cert-badge p-5 text-center fade-in">
+        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <i class="fas fa-certificate text-primary text-2xl"></i>
+        </div>
+        <h4 class="font-playfair font-bold text-dark-text text-sm mb-1">FSSAI Licensed</h4>
+        <p class="text-muted text-xs">Food Safety &amp; Standards Authority of India</p>
+      </div>
+      <div class="cert-badge p-5 text-center fade-in">
+        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+        </div>
+        <h4 class="font-playfair font-bold text-dark-text text-sm mb-1">ISO 22000</h4>
+        <p class="text-muted text-xs">Food Safety Management System</p>
+      </div>
+      <div class="cert-badge p-5 text-center fade-in">
+        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <i class="fas fa-flask text-purple-600 text-2xl"></i>
+        </div>
+        <h4 class="font-playfair font-bold text-dark-text text-sm mb-1">Lab Verified</h4>
+        <p class="text-muted text-xs">Tested &amp; certified produce — every batch</p>
+      </div>
+      <div class="cert-badge p-5 text-center fade-in">
+        <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <i class="fas fa-globe-asia text-accent-dark text-2xl"></i>
+        </div>
+        <h4 class="font-playfair font-bold text-dark-text text-sm mb-1">APEDA Registered</h4>
+        <p class="text-muted text-xs">Agricultural &amp; Processed Food Export</p>
+      </div>
+    </div>
+
+    <!-- Process Timeline -->
+    <div class="fade-in">
+      <h3 class="font-playfair text-2xl font-bold text-dark-text mb-8">Our Quality Process</h3>
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+        <div class="text-center">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-2 shadow-md relative z-10">
+            <i class="fas fa-tractor text-white text-sm"></i>
+          </div>
+          <p class="text-xs font-semibold text-dark-text">Sourcing</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-2 shadow-md relative z-10">
+            <i class="fas fa-water text-white text-sm"></i>
+          </div>
+          <p class="text-xs font-semibold text-dark-text">Washing</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-2 shadow-md relative z-10">
+            <i class="fas fa-sun text-white text-sm"></i>
+          </div>
+          <p class="text-xs font-semibold text-dark-text">Dehydration</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-2 shadow-md relative z-10">
+            <i class="fas fa-microscope text-white text-sm"></i>
+          </div>
+          <p class="text-xs font-semibold text-dark-text">Quality Check</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-2 shadow-md relative z-10">
+            <i class="fas fa-box text-white text-sm"></i>
+          </div>
+          <p class="text-xs font-semibold text-dark-text">Packaging</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-2 shadow-md relative z-10">
+            <i class="fas fa-truck text-white text-sm"></i>
+          </div>
+          <p class="text-xs font-semibold text-dark-text">Delivery</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     GALLERY
+     ========================================================= -->
+<section id="gallery" class="py-20 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 fade-in">
+      <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2"><i class="fas fa-images mr-1"></i> Gallery</p>
+      <h2 class="font-playfair text-4xl md:text-5xl font-bold text-dark-text section-title-line">From Our Farm<br/>to Your Table</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 fade-in">
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=75" alt="Green farm fields Maharashtra" loading="lazy"/>
+      </div>
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=75" alt="Dehydrated vegetables in bowls" loading="lazy"/>
+      </div>
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=75" alt="Fresh produce at farm" loading="lazy"/>
+      </div>
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=75" alt="Spices and herbs dried" loading="lazy"/>
+      </div>
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1595350454028-3ed23de5c85a?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1595350454028-3ed23de5c85a?w=600&q=75" alt="Packaging dehydrated products" loading="lazy"/>
+      </div>
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?w=600&q=75" alt="Dehydrated mango slices" loading="lazy"/>
+      </div>
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1599909533864-b27e0abde7e1?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1599909533864-b27e0abde7e1?w=600&q=75" alt="Indian farmer harvesting crops" loading="lazy"/>
+      </div>
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=75" alt="Beautiful farm aerial view" loading="lazy"/>
+      </div>
+      <div class="gallery-img" onclick="openLightbox('https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1000&q=80')">
+        <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=600&q=75" alt="Packed dehydrated food products" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TESTIMONIALS
+     ========================================================= -->
+<section id="testimonials" class="py-20 px-4 bg-bg-warm">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12 fade-in">
+      <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2"><i class="fas fa-star mr-1 text-accent"></i> Customer Stories</p>
+      <h2 class="font-playfair text-4xl md:text-5xl font-bold text-dark-text section-title-line">What Our Customers Say</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card p-7 fade-in">
+        <div class="text-accent text-3xl mb-3"><i class="fas fa-quote-left"></i></div>
+        <p class="text-dark-text text-sm leading-relaxed mb-4">"Ordered dehydrated onion flakes and spinach powder in bulk. The quality is exceptional — rich color, strong aroma, and absolutely no artificial smell. Have been reordering for 6 months now!"</p>
+        <div class="flex text-accent text-sm mb-4">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center font-playfair font-bold text-primary">RS</div>
+          <div>
+            <p class="font-semibold text-dark-text text-sm">Rajesh Sharma</p>
+            <p class="text-muted text-xs">Restaurant Owner, Mumbai</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card p-7 fade-in">
+        <div class="text-accent text-3xl mb-3"><i class="fas fa-quote-left"></i></div>
+        <p class="text-dark-text text-sm leading-relaxed mb-4">"I purchase dehydrated amla and moringa powder for my health store. Drivanta's products are lab-tested, naturally processed, and my customers love them. Delivery is always on time too!"</p>
+        <div class="flex text-accent text-sm mb-4">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center font-playfair font-bold text-accent-dark">FS</div>
+          <div>
+            <p class="font-semibold text-dark-text text-sm">Fatima Shaikh</p>
+            <p class="text-muted text-xs">Health Store Owner, Pune</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card p-7 fade-in">
+        <div class="text-accent text-3xl mb-3"><i class="fas fa-quote-left"></i></div>
+        <p class="text-dark-text text-sm leading-relaxed mb-4">"Sourcing dehydrated vegetables for our food processing unit from Drivanta has been a great decision. 25kg bulk packs, consistent quality, FSSAI certified — exactly what we needed. Highly recommended!"</p>
+        <div class="flex text-accent text-sm mb-4">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-playfair font-bold text-blue-700">AM</div>
+          <div>
+            <p class="font-semibold text-dark-text text-sm">Anand Mehta</p>
+            <p class="text-muted text-xs">Food Processing Unit, Surat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT / GET A QUOTE
+     ========================================================= -->
+<section id="contact" class="py-20 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 fade-in">
+      <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2"><i class="fas fa-envelope mr-1"></i> Reach Out</p>
+      <h2 class="font-playfair text-4xl md:text-5xl font-bold text-dark-text section-title-line">Get a Quote</h2>
+      <p class="text-muted mt-4 max-w-md mx-auto">Fill the form and we'll respond via WhatsApp within 1 hour during business hours.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Form -->
+      <div class="bg-bg-warm rounded-2xl p-8 shadow-md fade-in">
+        <form id="enquiry-form" onsubmit="sendWhatsApp(event)">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-sm font-semibold text-dark-text mb-1">Full Name *</label>
+              <input type="text" id="f-name" class="form-input" placeholder="Your full name" required />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-dark-text mb-1">Phone Number *</label>
+              <input type="tel" id="f-phone" class="form-input" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-semibold text-dark-text mb-1">Email (Optional)</label>
+            <input type="email" id="f-email" class="form-input" placeholder="your@email.com" />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-semibold text-dark-text mb-1">City / State *</label>
+            <input type="text" id="f-city" class="form-input" placeholder="e.g. Mumbai, Maharashtra" required />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-semibold text-dark-text mb-1">Product Interested In *</label>
+            <select id="f-product" class="form-input" required>
+              <option value="">-- Select a Product --</option>
+              <optgroup label="🥕 Vegetables">
+                <option>Dehydrated Onion Flakes</option>
+                <option>Dehydrated Garlic Flakes / Powder</option>
+                <option>Dehydrated Tomato Flakes</option>
+                <option>Dehydrated Spinach Powder</option>
+                <option>Dehydrated Ginger Powder</option>
+                <option>Dehydrated Green Peas</option>
+                <option>Dehydrated Carrot Granules</option>
+                <option>Dehydrated Cabbage</option>
+                <option>Dehydrated Beetroot Powder</option>
+                <option>Dehydrated Drumstick (Moringa) Powder</option>
+              </optgroup>
+              <optgroup label="🥭 Fruits">
+                <option>Dehydrated Mango Slices / Powder</option>
+                <option>Dehydrated Banana Powder</option>
+                <option>Dehydrated Amla (Gooseberry) Powder</option>
+                <option>Dehydrated Tamarind</option>
+                <option>Dehydrated Guava Powder</option>
+              </optgroup>
+              <optgroup label="🌿 Spices &amp; Herbs">
+                <option>Dehydrated Fenugreek (Methi) Leaves</option>
+                <option>Dehydrated Coriander Powder</option>
+                <option>Dehydrated Curry Leaves Powder</option>
+                <option>Dehydrated Mint Powder</option>
+                <option>Dehydrated Turmeric Powder</option>
+              </optgroup>
+              <option value="Multiple Products">Multiple Products</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-semibold text-dark-text mb-1">Quantity Required *</label>
+            <select id="f-qty" class="form-input" required>
+              <option value="">-- Select Quantity --</option>
+              <option>Retail (250g – 1kg)</option>
+              <option>1–5 kg</option>
+              <option>5–25 kg</option>
+              <option>25kg+ Bulk Order</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label class="block text-sm font-semibold text-dark-text mb-1">Message / Notes</label>
+            <textarea id="f-msg" class="form-input h-24 resize-none" placeholder="Any special requirements, delivery details, etc."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold py-3.5 rounded-xl text-base transition shadow-md flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp text-xl"></i> Send Enquiry via WhatsApp
+          </button>
+          <p class="text-xs text-muted text-center mt-3">This will open WhatsApp with your enquiry pre-filled.</p>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="flex flex-col gap-6 fade-in">
+        <div class="bg-primary rounded-2xl p-7 text-white">
+          <h3 class="font-playfair text-2xl font-bold mb-5">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex gap-3 items-start">
+              <div class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-map-marker-alt text-sm"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-sm">Address</p>
+                <p class="text-white/80 text-sm">Ambaji Nagar, At Post Borale,<br/>Nandurbar, Maharashtra</p>
+              </div>
+            </div>
+            <div class="flex gap-3 items-center">
+              <div class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-sm"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-sm">Phone / WhatsApp</p>
+                <a href="tel:+917709092656" class="text-white/80 text-sm hover:text-accent transition">+91 7709092656</a>
+              </div>
+            </div>
+            <div class="flex gap-3 items-center">
+              <div class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-sm"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-sm">Email</p>
+                <a href="mailto:contact@drivantaagro.in" class="text-white/80 text-sm hover:text-accent transition">contact@drivantaagro.in</a>
+              </div>
+            </div>
+            <div class="flex gap-3 items-center">
+              <div class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-clock text-sm"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-sm">Working Hours</p>
+                <p class="text-white/80 text-sm">Mon – Sat, 9:00 AM – 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social icons -->
+          <div class="flex gap-3 mt-6">
+            <a href="https://wa.me/917709092656" target="_blank" rel="noopener" 
+               class="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center hover:opacity-80 transition" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp text-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center hover:opacity-80 transition" aria-label="Instagram">
+              <i class="fab fa-instagram text-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition" aria-label="Facebook">
+              <i class="fab fa-facebook-f text-white"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100 h-52 bg-green-50 flex items-center justify-center">
+          <iframe 
+            src="https://maps.google.com/maps?q=Nandurbar,Maharashtra,India&z=10&output=embed"
+            class="w-full h-full border-0" 
+            allowfullscreen loading="lazy"
+            title="Drivanta Agro Foods Location - Nandurbar Maharashtra">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="bg-primary-dark text-white py-14 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+            <i class="fas fa-leaf text-white text-base"></i>
+          </span>
+          <span class="font-playfair font-bold text-xl">Drivanta Agro Foods</span>
+        </div>
+        <p class="text-green-200 text-sm leading-relaxed mb-4">"Farm Fresh. Sun Dried. Delivered Pure."</p>
+        <p class="text-green-300 text-xs leading-relaxed">Premium 100% natural dehydrated vegetables and fruits, sourced directly from farms in Nandurbar, Maharashtra.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-playfair font-bold text-base mb-4 text-accent">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#home" class="text-green-200 hover:text-accent transition">Home</a></li>
+          <li><a href="#about" class="text-green-200 hover:text-accent transition">About Us</a></li>
+          <li><a href="#products" class="text-green-200 hover:text-accent transition">Products</a></li>
+          <li><a href="#why-us" class="text-green-200 hover:text-accent transition">Why Choose Us</a></li>
+          <li><a href="#certifications" class="text-green-200 hover:text-accent transition">Certifications</a></li>
+          <li><a href="#gallery" class="text-green-200 hover:text-accent transition">Gallery</a></li>
+          <li><a href="#contact" class="text-green-200 hover:text-accent transition">Contact & Quote</a></li>
+        </ul>
+      </div>
+
+      <!-- Product Categories -->
+      <div>
+        <h4 class="font-playfair font-bold text-base mb-4 text-accent">Product Range</h4>
+        <ul class="space-y-2 text-sm">
+          <li class="text-green-200">🥕 Dehydrated Vegetables</li>
+          <li class="text-green-200">🥭 Dehydrated Fruits</li>
+          <li class="text-green-200">🌿 Spices &amp; Herbs</li>
+          <li class="text-green-300 text-xs mt-3">Bulk Orders | Retail Packs</li>
+          <li class="text-green-300 text-xs">Custom Packaging Available</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-playfair font-bold text-base mb-4 text-accent">Contact Us</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex gap-2 items-start text-green-200">
+            <i class="fas fa-map-marker-alt text-accent mt-0.5 flex-shrink-0"></i>
+            Ambaji Nagar, At Post Borale, Nandurbar, Maharashtra
+          </li>
+          <li class="flex gap-2 items-center">
+            <i class="fas fa-phone text-accent flex-shrink-0"></i>
+            <a href="tel:+917709092656" class="text-green-200 hover:text-accent transition">+91 7709092656</a>
+          </li>
+          <li class="flex gap-2 items-center">
+            <i class="fas fa-envelope text-accent flex-shrink-0"></i>
+            <a href="mailto:contact@drivantaagro.in" class="text-green-200 hover:text-accent transition">contact@drivantaagro.in</a>
+          </li>
+          <li class="flex gap-2 items-center text-green-200">
+            <i class="fas fa-clock text-accent flex-shrink-0"></i>
+            Mon–Sat, 9 AM – 6 PM
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm">
+      <p class="text-green-300">© 2025 Drivanta Agro Foods. All Rights Reserved. | FSSAI Licensed</p>
+      <p class="text-green-300 text-xs">Made with ❤️ in Nandurbar, Maharashtra</p>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+<script>
+// -----------------------------------------------
+// PRODUCT DATA
+// -----------------------------------------------
+const products = [
+  // Vegetables
+  { name:"Dehydrated Onion Flakes", cat:"vegetable", desc:"Crispy, pungent, and rich in flavor. Perfect for soups, gravies & snacks.", img:"https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=400&q=70" },
+  { name:"Dehydrated Garlic Flakes / Powder", cat:"vegetable", desc:"Intense garlic flavor — ideal for masalas, marinades & sauces.", img:"https://images.unsplash.com/photo-1474440692490-2e83ae13ba29?w=400&q=70" },
+  { name:"Dehydrated Tomato Flakes", cat:"vegetable", desc:"Sun-rich tomato taste preserved naturally. Great for pasta, soups & dips.", img:"https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=400&q=70" },
+  { name:"Dehydrated Spinach Powder", cat:"vegetable", desc:"Vibrant green, nutrient-dense powder for health drinks & recipes.", img:"https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&q=70" },
+  { name:"Dehydrated Ginger Powder", cat:"vegetable", desc:"Fiery, aromatic ginger — essential for chai, curries and Ayurveda.", img:"https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=400&q=70" },
+  { name:"Dehydrated Green Peas", cat:"vegetable", desc:"Bright green, sweet and tender — perfect for rice, salads & curries.", img:"https://images.unsplash.com/photo-1567375698348-5d9d5ae99de0?w=400&q=70" },
+  { name:"Dehydrated Carrot Granules", cat:"vegetable", desc:"Sweet, crunchy granules retaining full beta-carotene and natural color.", img:"https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&q=70" },
+  { name:"Dehydrated Cabbage", cat:"vegetable", desc:"Light, crispy shreds for noodles, soups, stir-fry & fast cooking.", img:"https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?w=400&q=70" },
+  { name:"Dehydrated Beetroot Powder", cat:"vegetable", desc:"Deep ruby-red powder — natural food coloring and nutritious supplement.", img:"https://images.unsplash.com/photo-1593105544559-ecb03bf76f82?w=400&q=70" },
+  { name:"Dehydrated Drumstick (Moringa) Powder", cat:"vegetable", desc:"The superfood of India — loaded with iron, vitamins & antioxidants.", img:"https://images.unsplash.com/photo-1612540139150-4b32c7b96a9f?w=400&q=70" },
+  // Fruits
+  { name:"Dehydrated Mango Slices / Powder", cat:"fruit", desc:"Alphonso-quality mango tang, preserved in every slice and spoon.", img:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400&q=70" },
+  { name:"Dehydrated Banana Powder", cat:"fruit", desc:"Smooth, sweet banana powder for baby food, smoothies & baking.", img:"https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&q=70" },
+  { name:"Dehydrated Amla (Gooseberry) Powder", cat:"fruit", desc:"Tangy Vitamin C powerhouse — the cornerstone of Indian wellness.", img:"https://images.unsplash.com/photo-1622957404458-9c91f5fb1c8f?w=400&q=70" },
+  { name:"Dehydrated Tamarind", cat:"fruit", desc:"Perfectly dried tamarind for authentic chutneys, rasam & more.", img:"https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&q=70" },
+  { name:"Dehydrated Guava Powder", cat:"fruit", desc:"Sweet and tropical guava flavor in versatile powder form.", img:"https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?w=400&q=70" },
+  // Spices & Herbs
+  { name:"Dehydrated Fenugreek (Methi) Leaves", cat:"spice", desc:"Aromatic kasuri methi — the secret behind restaurant-quality gravy.", img:"https://images.unsplash.com/photo-1612540139150-4b32c7b96a9f?w=400&q=70" },
+  { name:"Dehydrated Coriander Powder", cat:"spice", desc:"Fragrant, citrusy coriander — cornerstone of Indian spice blends.", img:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400&q=70" },
+  { name:"Dehydrated Curry Leaves Powder", cat:"spice", desc:"Rich tempering agent — adds authentic South Indian aroma to dishes.", img:"https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&q=70" },
+  { name:"Dehydrated Mint Powder", cat:"spice", desc:"Cool and refreshing mint — ideal for chutneys, raita & beverages.", img:"https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=400&q=70" },
+  { name:"Dehydrated Turmeric Powder", cat:"spice", desc:"Golden, curcumin-rich turmeric — India's most prized healing spice.", img:"https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=400&q=70" },
+];
+
+function buildProductCard(p) {
+  const wa = `https://wa.me/917709092656?text=${encodeURIComponent(`Hello Drivanta Agro Foods! I am interested in ordering: ${p.name}. Please share price and availability.`)}`;
+  return `
+    <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md fade-in" data-cat="${p.cat}">
+      <div class="relative overflow-hidden h-44">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover transition-transform duration-400 hover:scale-110" 
+             onerror="this.src='https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=70'"/>
+        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full px-2 py-1 text-xs font-semibold text-primary capitalize">${p.cat === 'vegetable' ? '🥕 Veg' : p.cat === 'fruit' ? '🥭 Fruit' : '🌿 Spice'}</div>
+      </div>
+      <div class="p-5">
+        <h3 class="font-playfair font-bold text-dark-text text-base mb-1 leading-tight">${p.name}</h3>
+        <p class="text-muted text-xs mb-3 leading-relaxed">${p.desc}</p>
+        <p class="text-xs text-primary font-semibold mb-4"><i class="fas fa-box mr-1 text-accent"></i>250g | 500g | 1kg | 5kg | 25kg Bulk</p>
+        <a href="${wa}" target="_blank" rel="noopener"
+           class="block text-center bg-primary hover:bg-primary-light text-white font-semibold py-2.5 rounded-xl text-sm transition">
+          <i class="fab fa-whatsapp mr-1"></i> Enquire Now
+        </a>
+      </div>
+    </div>`;
+}
+
+function renderProducts(filter='all') {
+  const grid = document.getElementById('product-grid');
+  const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map(buildProductCard).join('');
+  // Re-observe new cards
+  document.querySelectorAll('#product-grid .fade-in').forEach(el => observer.observe(el));
+}
+
+// Filter tab handler
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderProducts(tab.dataset.filter);
+  });
+});
+
+// -----------------------------------------------
+// NAVBAR SCROLL BEHAVIOR
+// -----------------------------------------------
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// -----------------------------------------------
+// HAMBURGER MENU
+// -----------------------------------------------
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamIcon = document.getElementById('ham-icon');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.contains('open');
+  mobileMenu.classList.toggle('open');
+  hamIcon.className = isOpen ? 'fas fa-bars text-2xl' : 'fas fa-times text-2xl';
+});
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  hamIcon.className = 'fas fa-bars text-2xl';
+}
+
+// -----------------------------------------------
+// INTERSECTION OBSERVER (fade-in + count-up)
+// -----------------------------------------------
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// -----------------------------------------------
+// COUNT-UP ANIMATION
+// -----------------------------------------------
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = +el.dataset.target;
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current) + suffix;
+      }, 16);
+      countObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(el));
+
+// -----------------------------------------------
+// GALLERY LIGHTBOX
+// -----------------------------------------------
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (e.target === document.getElementById('lightbox') || e.target === document.getElementById('lightbox-img')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+// -----------------------------------------------
+// CONTACT FORM → WHATSAPP
+// -----------------------------------------------
+function sendWhatsApp(e) {
+  e.preventDefault();
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const city    = document.getElementById('f-city').value.trim();
+  const product = document.getElementById('f-product').value;
+  const qty     = document.getElementById('f-qty').value;
+  const msg     = document.getElementById('f-msg').value.trim();
+
+  const text = `🌿 *New Enquiry – Drivanta Agro Foods*
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}${email ? `
+📧 *Email:* ${email}` : ''}
+📍 *City/State:* ${city}
+
+🛒 *Product:* ${product}
+📦 *Quantity:* ${qty}${msg ? `
+
+💬 *Message:* ${msg}` : ''}
+
+_Sent via website enquiry form_`;
+
+  window.open(`https://wa.me/917709092656?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+// -----------------------------------------------
+// SMOOTH SCROLL
+// -----------------------------------------------
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// -----------------------------------------------
+// INIT PRODUCTS
+// -----------------------------------------------
+renderProducts('all');
+
+// Re-observe all fade-in elements (including dynamically generated)
+setTimeout(() => {
+  document.querySelectorAll('.fade-in:not(.visible)').forEach(el => observer.observe(el));
+}, 100);
+</script>
+</body>
+</html>
